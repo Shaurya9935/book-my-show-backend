@@ -1,5 +1,5 @@
-import jwt from "jsonwebtoken";
 import crypto from "crypto";
+import jwt from "jsonwebtoken";
 
 const generateAccessToken = (payload) => {
     return jwt.sign(payload, process.env.JWT_ACCESS_SECRET,{
@@ -31,7 +31,7 @@ const generateResetToken = () => {
     return {rawToken, hashedToken};
 }
 
-export default {
+export {
     generateAccessToken,
     verifyAccessToken,
     generateRefreshToken,

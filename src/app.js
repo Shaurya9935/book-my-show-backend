@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import authRoute from "./module/auth/auth.routes.js";
-import ApiError from "./common/utils/api-error";
+import ApiError from "./common/utils/api-error.js";
 
 const app = express();
 app.use(express.json());

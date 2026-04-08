@@ -1,6 +1,12 @@
+import crypto from "crypto"
 import User from "./auth.model.js"
 import ApiError from "../../common/utils/api-error.js"
-import { generateAccessToken, generateRefreshToken, generateResetToken, verifyAccessToken } from "../../common/utils/jwt-util.js"
+import { 
+    generateAccessToken,
+    generateRefreshToken, 
+    generateResetToken, 
+    verifyRefreshToken 
+} from "../../common/utils/jwt-util.js"
 import { sendVerificationEmail, sendResetPasswordEmail,} from "../../common/config/email.js";
 
 const hashToken = (token) => {
@@ -147,4 +153,4 @@ const getMe = async(userId) => {
 
 
 
-export default {register, login, refresh, logout, verifyEmail, forgotPassword, resetPassword};
+export {register, login, refresh, logout, verifyEmail, forgotPassword, resetPassword};
