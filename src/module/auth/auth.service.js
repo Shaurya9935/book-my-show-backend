@@ -13,9 +13,9 @@ const hashToken = (token) => {
     crypto.createHash("sha256").update(token).digest("hex");
 }
 
-const register = async({name, email, password}) => {
+const register = async({name, email, password, role}) => {
 
-    const existing = User.findOne({email});
+    const existing = await User.findOne({email});
 
     if(existing) throw ApiError.conflict("User Already exists");
 
